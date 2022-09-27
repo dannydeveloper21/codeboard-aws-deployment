@@ -31,4 +31,9 @@ public class Task {
     public void setCreation_date(Date creation_date) {
         this.creation_date = creation_date;
     }
+
+    @Override
+    public String toString() {
+        return this.task_name;
+    }
 }

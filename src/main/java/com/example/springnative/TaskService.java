@@ -17,7 +17,7 @@ public class TaskService {
 
     public Task save(Task task) {
         task.setCreation_date(new Date());
-        log.info("Task: {}", task);
+        log.info("Task: {}", task.toString());
         return this.taskRepository.save(task);
     }
 

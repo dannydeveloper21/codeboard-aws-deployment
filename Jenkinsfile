@@ -5,7 +5,7 @@ pipeline{
             steps {
                 sh '''
                     export MAVEN_HOME=/opt/homebrew/Cellar/maven/3.8.6/libexec
-                    export PATH=$PATH:$MAVEN_HOME
+                    export PATH=$PATH:$MAVEN_HOME/bin
                     mvn --version
                     mvn clean install
                 '''

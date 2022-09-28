@@ -3,8 +3,12 @@ pipeline{
     stages {
         stage('Build and Push to Artifactory') {
             steps {
-                tool name: 'Maven3.8.6', type: 'maven'
-                sh "mvn clean install"
+                sh '''
+                    export MAVEN_HOME=/opt/homebrew/Cellar/maven/3.8.6/libexec
+                    export PATH=$PATH:$MAVEN_HOME
+                    mvn --version
+                    mvn clean install
+                '''
             }
         }
         stage('Build and Publish image in Docker'){

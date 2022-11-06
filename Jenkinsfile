@@ -17,7 +17,7 @@ pipeline{
                     docker build --no-cache -t ${JOB_NAME}:${BUILD_NUMBER} .
                     docker images | grep ${JOB_NAME}
                 '''
-                echo "Build Process completed."
+                echo "Build Process completed"
             }
         }
     }

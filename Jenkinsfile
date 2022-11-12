@@ -16,7 +16,7 @@ pipeline{
                 sh '''
                     docker build --no-cache -t ${JOB_NAME}:${BUILD_NUMBER} .
                     docker images | grep ${JOB_NAME}
-                    docker run -d -p 9000:80 --name ${JOB_NAME} ${JOB_NAME}:${BUILD_NUMBER}
+                    docker run -p 9000:8082 --name ${JOB_NAME} ${JOB_NAME}:${BUILD_NUMBER}
                 '''
                 echo "Build Process completed"
             }
